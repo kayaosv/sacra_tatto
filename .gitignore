@@ -1,0 +1,5 @@
+screenshots/
+.thumbnail
+.playwright-mcp/
+.image-slots.state.json
+.DS_Store

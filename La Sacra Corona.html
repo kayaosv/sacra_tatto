@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>La Sacra Corona — Estudio de tatuaje & piercing · Sevilla</title>
+  <meta name="description" content="La Sacra Corona — estudio de tatuaje y piercing en Sevilla. Realismo, black & grey, fine art y tradición. 15+ años, 4,9★ (786 reseñas). Dos estudios en el centro histórico. Reserva tu cita." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0e0d0c" />
+  <meta name="author" content="La Sacra Corona" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="La Sacra Corona — Estudio de tatuaje & piercing · Sevilla" />
+  <meta property="og:description" content="Realismo, black & grey, fine art y tradición. 15+ años marcando Sevilla con tinta que dura toda la vida. 4,9★ · 786 reseñas · 2 estudios." />
+  <meta property="og:url" content="https://www.lasacracorona.es" />
+  <meta property="og:site_name" content="La Sacra Corona" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="business:contact_data:street_address" content="C/ Feria 35" />
+  <meta property="business:contact_data:locality" content="Sevilla" />
+  <meta property="business:contact_data:postal_code" content="41003" />
+  <meta property="business:contact_data:country_name" content="España" />
+  <meta property="business:contact_data:phone_number" content="+34666577619" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="La Sacra Corona — Estudio de tatuaje & piercing · Sevilla" />
+  <meta name="twitter:description" content="Realismo, black & grey, fine art y tradición. 15+ años marcando Sevilla con tinta que dura toda la vida." />
+
+  <!-- JSON-LD: TattooShop -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "name": "La Sacra Corona",
+    "description": "Estudio de tatuaje y piercing en Sevilla. Realismo, black & grey, fine art y tradición.",
+    "url": "https://www.lasacracorona.es",
+    "telephone": "+34666577619",
+    "email": "hola@lasacracorona.es",
+    "foundingDate": "2009",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "786",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C/ Feria 35",
+      "addressLocality": "Sevilla",
+      "postalCode": "41003",
+      "addressCountry": "ES"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "11:00",
+        "closes": "20:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/lasacracorona"
+    ],
+    "priceRange": "€€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card",
+    "image": "https://www.lasacracorona.es/og.jpg"
+  }
+  </script>
+
+  <!-- Fonts: gothic display (logo), inscriptional headlines, humanist body, technical mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=UnifrakturMaguntia&family=Jost:ital,wght@0,300;0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- KAYAO foundations, then La Sacra theme + layout -->
+  <link rel="stylesheet" href="lib/kayao-tokens.css" />
+  <link rel="stylesheet" href="lib/lasacra-theme.css?v=8" />
+  <link rel="stylesheet" href="lib/lasacra-layout.css?v=8" />
+
+  <style>
+    html, body { background: #0e0d0c; }
+    #root { position: relative; z-index: 2; }
+  </style>
+</head>
+<body>
+  <!-- Intro preloader (visible instantly, before React/Babel compile) -->
+  <div id="lsc-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-word lsc-word">La&nbsp;Sacra&nbsp;Corona</div>
+      <div class="loader-bar"><span></span></div>
+      <div class="loader-count">00</div>
+    </div>
+  </div>
+
+  <!-- Custom cursor + scroll progress (driven by motion module) -->
+  <div id="lsc-cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <div id="lsc-progress" aria-hidden="true"><span></span></div>
+
+  <div id="root"></div>
+
+  <!-- React + Babel (pinned) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Plain-JS dependencies -->
+  <script src="lib/image-slot.js?v=8"></script>
+  <script src="lib/lasacra-content.js?v=8"></script>
+  <script src="lib/lasacra-atmosphere.js?v=8"></script>
+  <script src="lib/lasacra-motion.js?v=8"></script>
+
+  <!-- React modules (compiled by Babel, in order) -->
+  <script type="text/babel" src="lib/tweaks-panel.jsx?v=8"></script>
+  <script type="text/babel" src="lib/lasacra-components.jsx?v=8"></script>
+  <script type="text/babel" src="lib/lasacra-sections-a.jsx?v=8"></script>
+  <script type="text/babel" src="lib/lasacra-sections-b.jsx?v=8"></script>
+  <script type="text/babel" src="lib/lasacra-app.jsx?v=8"></script>
+</body>
+</html>

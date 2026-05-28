@@ -1,0 +1,240 @@
+/* =========================================================================
+   KAYAO — Foundations: Color + Type + Spacing
+   -------------------------------------------------------------------------
+   Dark, dimensional, refined. The studio palette is intentionally restricted:
+   a near-black ground, a near-white type color, and a graded set of neutrals
+   that read as atmosphere rather than UI chrome.
+
+   CLIENT PALETTES are layered ON TOP via the --accent-* slots — they are
+   defined per project and MUST be supplied by the client. Never invent.
+   ========================================================================= */
+
+:root {
+  /* ---- Studio neutrals (dark mode is the default) -------------------- */
+  --ink-000: #050506;   /* deepest ground — page background */
+  --ink-050: #0b0b0d;   /* card / second surface */
+  --ink-100: #111114;   /* raised surface */
+  --ink-200: #1a1a1f;   /* hairline backgrounds, hover wells */
+  --ink-300: #2a2a31;   /* dividers, low-contrast borders */
+  --ink-400: #44444d;   /* disabled / tertiary type */
+  --ink-500: #6e6e78;   /* secondary type, captions */
+  --ink-600: #9a9aa3;   /* body in dimmed contexts */
+  --ink-700: #c4c4c9;   /* primary body text on dark */
+  --ink-800: #e6e6e8;   /* high-emphasis type */
+  --ink-900: #f4f4f1;   /* display / hero type — warm-tinted off-white */
+
+  /* ---- Foreground / background semantic aliases ---------------------- */
+  --bg:        var(--ink-000);
+  --bg-raised: var(--ink-050);
+  --bg-card:   var(--ink-100);
+  --bg-hover:  var(--ink-200);
+
+  --fg:        var(--ink-900);
+  --fg-1:      var(--ink-800);  /* primary */
+  --fg-2:      var(--ink-600);  /* secondary */
+  --fg-3:      var(--ink-500);  /* tertiary / metadata */
+  --fg-4:      var(--ink-400);  /* disabled */
+
+  --line:        var(--ink-300);
+  --line-strong: var(--ink-400);
+  --line-soft:   color-mix(in oklab, var(--ink-300) 60%, transparent);
+
+  /* ---- CLIENT ACCENT SLOTS (override per project) ------------------- */
+  /* Defaults are a neutral off-white — visible but unopinionated.
+     For a real project, override these in a project-scoped stylesheet. */
+  --accent:        var(--ink-900);
+  --accent-ink:    var(--ink-000);   /* type color when ON --accent */
+  --accent-soft:   color-mix(in oklab, var(--ink-900) 12%, transparent);
+
+  /* Optional secondary accent for editorial moments */
+  --accent-2:      var(--ink-700);
+  --accent-2-ink:  var(--ink-000);
+
+  /* Status — kept neutral by default; overridable per project */
+  --status-pos: #c4f0a8;
+  --status-neg: #f0a8a8;
+  --status-warn: #f0d8a8;
+
+  /* ---- Type stack ---------------------------------------------------- */
+  /* Helvetica is the workhorse. NEVER fall through to Inter/Roboto/system
+     defaults — the brief is explicit. We pin to a real Helvetica/Neue Haas
+     stack and fall back through Akzidenz-style options before any system
+     sans. */
+  --font-sans: "Helvetica Neue", "Helvetica", "Neue Haas Grotesk", "Akzidenz-Grotesk", "Arial", sans-serif;
+
+  /* Display + mono pairings. Default to a free-Google substitute (flagged
+     to the user) — real KAYAO projects swap these per-client. */
+  --font-display: "PP Editorial New", "GT Sectra", "Times Now", "Times New Roman", Georgia, serif;
+  --font-mono:    "JetBrains Mono", "Berkeley Mono", "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-cond:    "PP Neue Machina", "Acumin Pro Condensed", "Helvetica Neue Condensed", var(--font-sans);
+
+  /* ---- Type scale (fluid, but anchored at desktop) ------------------- */
+  --t-display-xl: clamp(56px, 9vw, 168px);  /* hero takeover, single word */
+  --t-display-l:  clamp(44px, 6.5vw, 112px);
+  --t-display-m:  clamp(36px, 5vw,  84px);
+  --t-h1:         clamp(32px, 4vw,  64px);
+  --t-h2:         clamp(24px, 2.6vw, 40px);
+  --t-h3:         clamp(20px, 1.8vw, 28px);
+  --t-body-l:     18px;
+  --t-body:       16px;
+  --t-body-s:     14px;
+  --t-caption:    12px;
+  --t-eyebrow:    11px;   /* mono, uppercase, tracked */
+
+  /* Line-heights: tight on display, generous on body */
+  --lh-display: 0.92;
+  --lh-heading: 1.05;
+  --lh-body:    1.5;
+  --lh-tight:   1.15;
+
+  /* Tracking (letter-spacing) */
+  --track-display: -0.02em;   /* optical squeeze on big type */
+  --track-tight:   -0.01em;
+  --track-normal:   0;
+  --track-wide:     0.02em;
+  --track-eyebrow:  0.18em;   /* mono uppercase eyebrows */
+
+  /* ---- Spacing (8-based, but with a micro-step at 4) ----------------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  /* Page margin / gutter — narrow, editorial */
+  --gutter:      clamp(16px, 2vw, 32px);
+  --page-margin: clamp(20px, 3vw, 56px);
+
+  /* ---- Radii — restrained. Most surfaces are crisp. ------------------ */
+  --r-0: 0;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-3: 8px;
+  --r-pill: 999px;
+
+  /* ---- Borders ------------------------------------------------------- */
+  --border-hair:   1px solid var(--line);
+  --border-strong: 1px solid var(--line-strong);
+
+  /* ---- Elevation — soft, atmospheric. Not material-design boxy. ----- */
+  --shadow-sm: 0 1px 0 0 rgba(255,255,255,0.04) inset, 0 8px 24px -12px rgba(0,0,0,0.6);
+  --shadow-md: 0 1px 0 0 rgba(255,255,255,0.05) inset, 0 24px 48px -24px rgba(0,0,0,0.7);
+  --shadow-lg: 0 1px 0 0 rgba(255,255,255,0.06) inset, 0 48px 96px -32px rgba(0,0,0,0.8);
+  --glow:      0 0 0 1px color-mix(in oklab, var(--accent) 40%, transparent),
+               0 0 32px -4px color-mix(in oklab, var(--accent) 35%, transparent);
+
+  /* ---- Motion — GSAP-flavored easings expressed as cubic-bezier ----- */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-fast:   180ms;
+  --dur-base:   320ms;
+  --dur-slow:   640ms;
+  --dur-reveal: 1100ms;  /* scroll-reveal, hero entries */
+
+  /* ---- Grain / texture overlays -------------------------------------- */
+  --grain-opacity: 0.06;
+}
+
+/* =========================================================================
+   Semantic element styles — applied to bare HTML inside .kayao scopes.
+   Keep these light: prototypes pull tokens directly more often than they
+   inherit element styles.
+   ========================================================================= */
+
+.kayao,
+.kayao * { box-sizing: border-box; }
+
+.kayao {
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.kayao h1, .kayao .h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-h1);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-tight);
+  font-weight: 400;
+  color: var(--fg);
+  margin: 0;
+}
+
+.kayao h2, .kayao .h2 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--track-tight);
+  font-weight: 500;
+  color: var(--fg);
+  margin: 0;
+}
+
+.kayao h3, .kayao .h3 {
+  font-family: var(--font-sans);
+  font-size: var(--t-h3);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-normal);
+  font-weight: 500;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+.kayao .display-xl,
+.kayao .display-l,
+.kayao .display-m {
+  font-family: var(--font-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+  font-weight: 400;
+  color: var(--fg);
+}
+.kayao .display-xl { font-size: var(--t-display-xl); }
+.kayao .display-l  { font-size: var(--t-display-l);  }
+.kayao .display-m  { font-size: var(--t-display-m);  }
+
+.kayao p { margin: 0; color: var(--fg-2); max-width: 64ch; }
+
+.kayao .eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  font-weight: 400;
+}
+
+.kayao code, .kayao .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0;
+  color: var(--fg-1);
+}
+
+.kayao a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size var(--dur-base) var(--ease-out-expo);
+}
+.kayao a:hover { background-size: 0% 1px; background-position: 100% 100%; }
+
+/* Selection — keep neutral; clients can override --accent and pick this up */
+.kayao ::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
