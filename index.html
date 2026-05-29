@@ -76,18 +76,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=UnifrakturMaguntia&family=Jost:ital,wght@0,300;0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- KAYAO foundations, then La Sacra theme + layout -->
-  <link rel="stylesheet" href="lib/kayao-tokens.css" />
-  <link rel="stylesheet" href="lib/lasacra-theme.css?v=8" />
-  <link rel="stylesheet" href="lib/lasacra-layout.css?v=8" />
-
   <style>
     html, body { background: #0e0d0c; }
     #root { position: relative; z-index: 2; }
   </style>
 </head>
 <body>
-  <!-- Intro preloader (visible instantly, before React/Babel compile) -->
+  <!-- Intro preloader (visible instantly, before JS loads) -->
   <div id="lsc-loader" aria-hidden="true">
     <div class="loader-inner">
       <div class="loader-word lsc-word">La&nbsp;Sacra&nbsp;Corona</div>
@@ -102,22 +97,6 @@
 
   <div id="root"></div>
 
-  <!-- React + Babel (pinned) -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-
-  <!-- Plain-JS dependencies -->
-  <script src="lib/image-slot.js?v=8"></script>
-  <script src="lib/lasacra-content.js?v=8"></script>
-  <script src="lib/lasacra-atmosphere.js?v=8"></script>
-  <script src="lib/lasacra-motion.js?v=8"></script>
-
-  <!-- React modules (compiled by Babel, in order) -->
-  <script type="text/babel" src="lib/tweaks-panel.jsx?v=8"></script>
-  <script type="text/babel" src="lib/lasacra-components.jsx?v=8"></script>
-  <script type="text/babel" src="lib/lasacra-sections-a.jsx?v=8"></script>
-  <script type="text/babel" src="lib/lasacra-sections-b.jsx?v=8"></script>
-  <script type="text/babel" src="lib/lasacra-app.jsx?v=8"></script>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

@@ -3,3 +3,5 @@ screenshots/
 .playwright-mcp/
 .image-slots.state.json
 .DS_Store
+node_modules/
+dist/
