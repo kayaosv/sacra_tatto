@@ -11,7 +11,6 @@ function init(readyCb) {
   runLoader(reduce);
   if (reduce) return;
 
-  setupSmoothScroll();
   setupAnchors();
   setupProgress();
   setupParallax();
